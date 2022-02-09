@@ -2,8 +2,8 @@
 
 class Sport
 {
-    private $nomSport;
-    private $nbJoueurs;
+    protected $nomSport;
+    protected $nbJoueurs;
 
     /**
      * @param $nomSport
