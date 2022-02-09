@@ -1,6 +1,6 @@
 <?php
 
-class Sport
+class Sport implements ISport
 {
     protected $nomSport;
     protected $nbJoueurs;
