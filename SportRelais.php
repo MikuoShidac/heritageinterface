@@ -23,6 +23,6 @@ class SportRelais extends Sport
 
     public function getDescription(): String
     {
-        return 'Description " Nom du sport: '.$this->nomSport.', Distance du terrain: '.$this->nbJoueurs.", Nb de joueurs: ".$this->nbJoueurs.'"<br>';
+        return 'Description " Nom du sport: '.$this->nomSport.', Distance du terrain: '.$this->distance.", Nb de joueurs: ".$this->nbJoueurs.'"<br>';
     }
 }
