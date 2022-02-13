@@ -7,29 +7,46 @@ include 'SportBallon.php';
 include 'Club.php';
 
 
-echo "project heritage et interface: <br>";
+//echo "project heritage et interface: <br>";
 
-$listclub[1]=new Club(idClub: 1,nomClub: "PSG",nbPoint: 234);
-$listclub[2]=new Club(idClub: 2,nomClub: "Pointou-Charante",nbPoint: 542);
-$listclub[3]=new Club(idClub: 3,nomClub: "Perpignant",nbPoint: 500);
+$listclub[1]=new Club(1,"PSG",234);
+$listclub[2]=new Club(2,"Pointou-Charante",542);
+$listclub[3]=new Club(3,"Perpignant",500);
 
-$listclub[1]->AjouterSports(new Sport(nomSport: "Football",nbJoueurs: 11));
+//Sport du PSG
+$sb=new Sport("Football",11);
+$listclub[1]->AjouterSports($sb);
 
-$listclub[2]->AjouterSports(new SportRelais(nomSport: "DiDaDou 100m",nbJoueurs: 1,distance: 100));
-$listclub[2]->AjouterSports(new SportRelais(nomSport: "DiDaDou 300m",nbJoueurs: 1,distance: 300));
+//Sport de Pointou-Charante
+$sport1=new Sport("Javelot",1);
+$sport2=new Sport("Judo",1);
+$sportBallon1=new SportBallon("FootBall",11,68,105);
+$sportBallon2=new SportBallon("HandBall",7,35,65);
+$sportRelais1=new SportRelais("4x500",400,4);
+$listclub[2]->AjouterSports($sport1);
+$listclub[2]->AjouterSports($sport2);
+$listclub[2]->AjouterSports($sportBallon1);
+$listclub[2]->AjouterSports($sportBallon2);
+$listclub[2]->AjouterSports($sportRelais1);
 
-$listclub[3]->AjouterSports(new SportBallon(nomSport: "Handball",nbJoueurs: 8,largeur: 20,longueur: 10));
-$listclub[3]->AjouterSports(new SportBallon(nomSport: "Basket",nbJoueurs: 6,largeur: 20,longueur: 30));
-$listclub[3]->AjouterSports(new SportRelais(nomSport: "Tire a l'arc",nbJoueurs: 3,distance: 150));
-
+//Sport de Perpignant
+$sport3=new Sport("Cyclisme",1);
+$sportBallon3=new SportBallon("FootBall",11,68,105);
+$sportBallon4=new SportBallon("Rugby",15,65,115);
+$sportRelais2=new SportRelais("100m",100,1);
+$listclub[3]->AjouterSports($sport3);
+$listclub[3]->AjouterSports($sportBallon3);
+$listclub[3]->AjouterSports($sportBallon4);
+$listclub[3]->AjouterSports($sportRelais2);
+/**
 $listSport[]=new Sport("Football", 11);
-$listSport[]=new SportRelais(nomSport: "4x100", distance: 400, nbJoueurs: 1);
-$listSport[]=new SportBallon(nomSport: "HandBall",nbJoueurs: 8,longueur: 48,largeur: 50);
-$listSport[]=new SportRelais(nomSport: "100", distance: 100, nbJoueurs: 1);
-$listSport[]=new SportRelais(nomSport: "200", distance: 200, nbJoueurs: 1);
-$listSport[]=new SportBallon(nomSport: "Basket",nbJoueurs: 8,longueur: 20,largeur: 30);
+$listSport[]=new SportRelais("4x100",400, 1);
+$listSport[]=new SportBallon("HandBall",8,48,50);
+$listSport[]=new SportRelais("100",100,1);
+$listSport[]=new SportRelais("200",200,1);
+$listSport[]=new SportBallon("Basket",8,20,30);
 $listSport[]=new Sport("SUPER SMASH BROS MELEEEEEEEEEE", 16);
-$listSport[]=new SportRelais(nomSport: "Look for a new queen", distance: 1000000000, nbJoueurs: 9001);
+$listSport[]=new SportRelais("Look for a new queen",1000000000,9001);
 
 foreach ($listSport as $keyListSport => $valueSport)
 {
@@ -38,4 +55,9 @@ foreach ($listSport as $keyListSport => $valueSport)
 foreach ($listclub as $values)
 {
     echo $values->getNomClub()."<br>";
-}
+} */
+
+echo '<h1>Liste des clubs: </h1> <a href="localhost:8080"></a><br>';
+echo '<a href="PSG"> 1-PSG </a><br>';
+echo '<a href="Pointou-Charante"> 2-Pointou-Charante </a><br>';
+echo '<a href="Perpignant"> 3-Perpignant </a><br>';
