@@ -60,7 +60,7 @@ foreach($listclub as $keyclub =>$valueClub)
 {
     echo "<a href=index.php?id={$keyclub}>{$keyclub} - {$valueClub->getNomClub()} {$valueClub->getNbPoint()}</a><br>";
 }
-if(isset($_GET['id'])) {
+if($_GET['id']) {
     echo '<h2>Liste des sport de ' . $listclub[$_GET['id']]->getNomClub() . '</h2>';
     $sp1 = $listclub[$_GET['id']]->getLesSports();
     foreach ($sp1 as $keySp1 => $valueSp1) {
