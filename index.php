@@ -6,9 +6,6 @@ include 'SportRelais.php';
 include 'SportBallon.php';
 include 'Club.php';
 
-
-//echo "project heritage et interface: <br>";
-
 $listclub[1]=new Club(1,"PSG",234);
 $listclub[2]=new Club(2,"Pointou-Charante",542);
 $listclub[3]=new Club(3,"Perpignant",500);
@@ -58,6 +55,6 @@ foreach ($listclub as $values)
 } */
 
 echo '<h1>Liste des clubs: </h1> <a href="localhost:8080"></a><br>';
-echo '<a href="PSG"> 1-PSG </a><br>';
-echo '<a href="Pointou-Charante"> 2-Pointou-Charante </a><br>';
-echo '<a href="Perpignant"> 3-Perpignant </a><br>';
+echo '<a href="localhost:8080?id=1"> 1-PSG </a><br>';
+echo '<a href="localhost:8080?id=2"> 2-Pointou-Charante </a><br>';
+echo '<a href="localhost:8080?id=3"> 3-Perpignant </a><br>';
