@@ -5,7 +5,7 @@ class Club implements Comparable
     private $idClub;
     private $nomClub;
     private $nbPoint;
-    private $lesSports;
+    private $lesSports =[];
 
     /**
      * @param $idClub
@@ -57,7 +57,7 @@ class Club implements Comparable
      */
     public function AjouterSports(Sport $sports): void
     {
-        $this->lesSports = $sports;
+        $this->lesSports[] = $sports;
     }
 
 

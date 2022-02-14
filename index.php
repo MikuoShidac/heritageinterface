@@ -9,6 +9,7 @@ include 'Club.php';
 $listclub[1]=new Club(1,"PSG",234);
 $listclub[2]=new Club(2,"Pointou-Charante",542);
 $listclub[3]=new Club(3,"Perpignant",500);
+$listclub[4]=new Club(4,"Jalganox",628);
 
 //Sport du PSG
 $sb=new Sport("Football",11);
@@ -54,7 +55,15 @@ foreach ($listclub as $values)
     echo $values->getNomClub()."<br>";
 } */
 
-echo '<h1>Liste des clubs: </h1> <a href="localhost:8080"></a><br>';
-echo '<a href="localhost:8080?id=1"> 1-PSG </a><br>';
-echo '<a href="localhost:8080?id=2"> 2-Pointou-Charante </a><br>';
-echo '<a href="localhost:8080?id=3"> 3-Perpignant </a><br>';
+echo '<h1>Liste des clubs: </h1> <a href="index.php"></a><br>';
+foreach($listclub as $keyclub =>$valueClub)
+{
+    echo "<a href=index.php?id={$keyclub}>{$keyclub} - {$valueClub->getNomClub()} {$valueClub->getNbPoint()}</a><br>";
+}
+if(isset($_GET['id'])) {
+    echo '<h2>Liste des sport de ' . $listclub[$_GET['id']]->getNomClub() . '</h2>';
+    $sp1 = $listclub[$_GET['id']]->getLesSports();
+    foreach ($sp1 as $keySp1 => $valueSp1) {
+        echo $valueSp1->getDescription();
+    }
+}
