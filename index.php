@@ -7,7 +7,7 @@ include 'SportBallon.php';
 include 'Club.php';
 include 'data.php';
 
-$dbh = new PDO('mysql:host=localhost;dbname=gestionclub', 'root', '');
+$dbh = new PDO('mysql:host=127.0.0.1;dbname=gestionclub', username:'root',password:'');
 
 
 
